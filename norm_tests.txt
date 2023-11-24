@@ -1,0 +1,43 @@
+# Calcular el rango de cada columna
+rango_columnas = np.max(datos, axis=0) - np.min(datos, axis=0)
+
+# Verificar si hay divisiones por cero
+division_por_cero = rango_columnas == 0
+rango_columnas[division_por_cero] = 1  # Evitar la división por cero
+
+# Normalización Min-Max
+datos_normalizados = (datos - np.min(datos, axis=0)) / rango_columnas
+
+# Mostrar los datos normalizados
+np.set_printoptions(precision=3, suppress=True)  # Ajustar la precisión para evitar notación científica
+
+print("Datos 0:", datos[0])
+print("Nomr: " ,datos_normalizados[0])
+
+print("All: ", datos)
+print("All nomr: ", datos_normalizados)
+
+
+---------------
+
+
+import numpy as np
+
+# Tus datos
+datos = np.array([[0.24038462, 0.24858757, 0.20481928, 0.2962963, 0.24793388, 0.5],
+                  [0.41346154, 0.2259887, 0.24096386, 0.2345679, 0.34710744, 0.5],
+                  [0.41346154, 0.2259887, 0.24096386, 0.2345679, 0.34710744, 0.35]])
+
+# Calcular el rango de cada columna
+rango_columnas = np.max(datos, axis=0) - np.min(datos, axis=0)
+
+# Verificar si hay divisiones por cero
+division_por_cero = rango_columnas == 0
+rango_columnas[division_por_cero] = 1  # Evitar la división por cero
+
+# Normalización Min-Max
+datos_normalizados = (datos - np.min(datos, axis=0)) / rango_columnas
+
+# Mostrar los datos normalizados
+np.set_printoptions(precision=3, suppress=True)  # Ajustar la precisión para evitar notación científica
+print(datos_normalizados)
