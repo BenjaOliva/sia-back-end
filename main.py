@@ -58,7 +58,7 @@ def predecir_cluster_endpoint_nv(data: dict):
     cluster_predicho = predecir_cluster_nv(nuevo_elemento, centroides)
 
     return { 
-        'cluster_predicho': cluster_predicho.tolist()
+        'cluster_predicho': cluster_predicho
      }
 
 # endpoint POST que devuelva un mensaje con los datos de entrada
